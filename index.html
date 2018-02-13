@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html" charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="title" content="">
+    <meta name="description" content="">
+    <title>task-3</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru-RU" type="text/javascript"></script>
+</head>
+<body>
+
+    <div class="wrapper">
+        <div class="start-game">
+            <div class="score">
+                <span class="start-game__title">Вы:</span>
+                <span class="user-score">0</span>
+            </div>
+            <div class="who-first">
+                <p class="start-game__title">Нажмите, чтобы узнать кто ходит первым</p>
+                <button id="start-game__button" type="submit" class="button">Старт</button>
+            </div>
+            <div class="score">
+                <span class="start-game__title">Компьютер:</span>
+                <span class="computer-score">0</span>
+            </div>
+        </div>
+        <div class="playing-field" style="display: none">
+            <div class="user">
+                <span class="user__title">Ваш ход</span>
+                <div class="user__cities"></div>
+            </div>
+            <form name="form-input" class="form-input">
+                <input id ="input-city-name" class="input-city-name"  type="text" placeholder="Введите название города" x-webkit-speech>
+                <div class="form-input__buttons">
+                    <button class="button" id="btnOk" type="submit">Отправить</button>
+                    <button class="button" id="btnSurrender" type="submit">Сдаться</button>
+                </div>
+                <p>Для ввода города с помощью микрофона зажмите "Ctrl".</p>
+            </form>
+            <div class="computer">
+                <span class="computer__title">Ход компьютера</span>
+                <div class="computer__cities"></div>
+            </div>
+        </div>
+    </div>
+    <div class="modal">
+        <div class="show-cities">
+            <p class="loser"></p>
+            <span class="show-cities__close">&times;</span>
+            <div class="cities">
+                <div class="show-user-cities">
+                    <p class="cities__title">Ваши города</p>
+                    <div class="modal__user-cities"></div>
+                </div>
+                <div class="show-computer-cities">
+                    <p class="cities__title">Города компьютера</p>
+                    <div class="modal__computer-cities"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="myMap" class="myMap"></div>
+
+    <script src="js/controller.js"></script>
+    <script src="js/gameInteraction.js"></script>
+    <script src="js/map.js"></script>
+    <script src="js/speech.js"></script>
+
+</body>
+</html>
